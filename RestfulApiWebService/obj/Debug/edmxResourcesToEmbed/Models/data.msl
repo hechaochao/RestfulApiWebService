@@ -1,19 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="dataModelStoreContainer" CdmEntityContainer="testEntities">
-    <EntitySetMapping Name="uidts">
-      <EntityTypeMapping TypeName="dataModel.uidt">
-        <MappingFragment StoreEntitySet="uidt">
-          <ScalarProperty Name="id" ColumnName="id" />
+  <EntityContainerMapping StorageEntityContainer="dataModelStoreContainer" CdmEntityContainer="testEntities1">
+    <EntitySetMapping Name="t1">
+      <EntityTypeMapping TypeName="dataModel.t1">
+        <MappingFragment StoreEntitySet="t1">
+          <ScalarProperty Name="objectstr" ColumnName="objectstr" />
           <ScalarProperty Name="uid" ColumnName="uid" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="href" ColumnName="href" />
-          <ScalarProperty Name="commentId" ColumnName="commentId" />
-          <ScalarProperty Name="nameWithType" ColumnName="nameWithType" />
-          <ScalarProperty Name="nameWithType_vb" ColumnName="nameWithType.vb" />
-          <ScalarProperty Name="name_vb" ColumnName="name.vb" />
-          <ScalarProperty Name="fullName" ColumnName="fullName" />
-          <ScalarProperty Name="fullName_vb" ColumnName="fullName.vb" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

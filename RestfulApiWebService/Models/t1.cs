@@ -12,17 +12,9 @@ namespace RestfulApiWebService.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class uidt
+    public partial class t1
     {
-        public long id { get; set; }
         public string uid { get; set; }
-        public string name { get; set; }
-        public string href { get; set; }
-        public string commentId { get; set; }
-        public string nameWithType { get; set; }
-        public string nameWithType_vb { get; set; }
-        public string name_vb { get; set; }
-        public string fullName { get; set; }
-        public string fullName_vb { get; set; }
+        public string objectstr { get; set; }
     }
 }

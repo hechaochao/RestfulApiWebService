@@ -18,16 +18,16 @@ namespace RestfulApiService.src
             return xref;
         }
 
-        public static void InitUidt(uidt ud)
-        {
-            ud.commentId = null;
-            ud.fullName = null;
-            ud.fullName_vb = null;
+        //public static void InitUidt(uidt ud)
+        //{
+        //    ud.commentId = null;
+        //    ud.fullName = null;
+        //    ud.fullName_vb = null;
 
-            ud.nameWithType = null;
-            ud.nameWithType_vb = null;
-            ud.name_vb = null;
-        }
+        //    ud.nameWithType = null;
+        //    ud.nameWithType_vb = null;
+        //    ud.name_vb = null;
+        //}
     }
     //class Program
     //{

@@ -82,3 +82,4 @@ C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\RestfulApiWeb
 C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\RestfulApiWebService\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
 C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\RestfulApiWebService\obj\Debug\RestfulApiWebService.dll
 C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\RestfulApiWebService\obj\Debug\RestfulApiWebService.pdb
+C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\RestfulApiWebService\bin\RestfulApiWebService.dll.config
