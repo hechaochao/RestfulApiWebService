@@ -1,30 +1,129 @@
-﻿using System;
+﻿using Microsoft.DocAsCode.Build.Engine;
+using RestfulApiService.DTOs;
+using RestfulApiService.src;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Linq.Expressions;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Web.Http;
+using System.Web.Http.Description;
+using System.Data.Entity;
+using RestfulApiWebService.Models;
 
-namespace RestfulApiWebService.Controllers
+namespace RestfulApiService.Controllers
 {
-    public class HomeController : Controller
+    [RoutePrefix("api/uids")]
+    public class TestController : ApiController
     {
-        public ActionResult Index()
+        private testEntities db = new testEntities();
+
+        private static readonly Expression<Func<uidt, UidSim>> AsUidSim =
+            x => new UidSim
+            {
+                uid = x.uid,
+                name = x.name,
+                commentId = x.commentId,
+                href = x.href
+            };
+
+        [HttpPost]
+        [Route("~/api/adduids")]
+        public void PostData()
         {
-            return View();
+            string path = @"C:\Users\t-chaohe\Desktop\Workspace\RestfulApiWebService\RestfulApiService\xrefmap.yml";
+
+            try
+            {
+                XRefMap xref = Microsoft.DocAsCode.Common.YamlUtility.Deserialize<XRefMap>(path);
+
+                foreach (var spec in xref.References)
+                {
+                    uidt ud = new uidt();
+                    Tool.InitUidt(ud);
+                    ICollection<string> keys = spec.Keys;
+                    foreach (string str in keys)
+                    {
+                        switch (str)
+                        {
+                            case "uid":
+                                ud.uid = spec[str];
+                                break;
+                            case "name":
+                                ud.name = spec[str];
+                                break;
+                            case "href":
+                                ud.href = spec[str];
+                                break;
+                            case "commentId":
+                                ud.commentId = spec[str];
+                                break;
+                            case "nameWithType":
+                                ud.nameWithType = spec[str];
+                                break;
+                            case "nameWithType.vb":
+                                ud.nameWithType_vb = spec[str];
+                                break;
+                            case "name.vb":
+                                ud.name_vb = spec[str];
+                                break;
+                            case "fullName":
+                                ud.fullName = spec[str];
+                                break;
+                            case "fullName.vb":
+                                ud.fullName_vb = spec[str];
+                                break;
+                        }
+                    }
+                    db.uidts.Add(ud);
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            return;
         }
 
-        public ActionResult About()
+        [HttpGet]
+        [Route("{uid}")]
+        [ResponseType(typeof(UidSim))]
+        public async Task<IHttpActionResult> GetByUid(string uid)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            UidSim uds = await db.uidts.Where(b => b.uid == uid)
+                                .Select(AsUidSim)
+                                .FirstOrDefaultAsync();
+            if (uds == null)
+            {
+                return NotFound();
+            }
+            return Ok(uds);
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        [Route("")]
+        [ResponseType(typeof(UidSim))]
+        public async Task<IHttpActionResult> PostByUids([FromBody]string[] uids)
         {
-            ViewBag.Message = "Your contact page.";
+            List<UidSim> uds = new List<UidSim>();
+            foreach (string uid in uids)
+            {
+                UidSim temp = await db.uidts.Where(b => b.uid == uid)
+                               .Select(AsUidSim)
+                               .FirstOrDefaultAsync();
+                uds.Add(temp);
+            }
 
-            return View();
+            if (uds == null)
+            {
+                return NotFound();
+            }
+            return Ok(uds);
         }
+
     }
 }
