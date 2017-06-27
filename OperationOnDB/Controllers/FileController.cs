@@ -1,4 +1,6 @@
-﻿using OperationOnDB.Filters;
+﻿using DB.Models;
+using Microsoft.DocAsCode.Build.Engine;
+using OperationOnDB.Filters;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,14 +14,17 @@ namespace OperationOnDB.Controllers
     BasicRealm = "localhost")]
     public class FileController : Controller
     {
+        private dataEntities db = new dataEntities();
+
         // GET: File
+        [HttpGet]
         public ActionResult UploadFile()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult UploadFile(dynamic d)
+        public ActionResult SaveFile()
         {
             var files = Request.Files;
             //var file = files[0];
@@ -30,7 +35,9 @@ namespace OperationOnDB.Controllers
                 {
                     var filePath = Server.MapPath(string.Format("~/{0}", "uploads"));
                     var fileName = files[i].FileName;
-                    files[i].SaveAs(Path.Combine(filePath, fileName));
+                    string fullPath = Path.Combine(filePath, fileName);
+                    files[i].SaveAs(fullPath);
+                    SaveData(fullPath);
                 }
                 
                 ModelState.Clear();
@@ -40,5 +47,21 @@ namespace OperationOnDB.Controllers
             ViewBag.Message = "Upload Failed!";
             return View();
         }
+
+       
+        private void SaveData(string path)
+        {
+            
+            XRefMap xref = Microsoft.DocAsCode.Common.YamlUtility.Deserialize<XRefMap>(path);
+            foreach (var spec in xref.References)
+            {
+                uidt t = new uidt();
+                t.uid = spec["uid"];
+                t.objectStr = Newtonsoft.Json.JsonConvert.SerializeObject(spec);
+                db.uidts.Add(t);
+                db.SaveChanges();
+            }
+        }
+
     }
 }

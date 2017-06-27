@@ -172,3 +172,11 @@ C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\OperationOnDB
 C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\OperationOnDB\bin\System.Collections.Immutable.xml
 C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\OperationOnDB\bin\YamlDotNet.xml
 C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\OperationOnDB\bin\it\DotLiquid.resources.dll
+C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\OperationOnDB\bin\OperationOnDB.dll.config
+C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\OperationOnDB\bin\DB.dll
+C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\OperationOnDB\bin\EntityFramework.dll
+C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\OperationOnDB\bin\EntityFramework.SqlServer.dll
+C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\OperationOnDB\bin\DB.pdb
+C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\OperationOnDB\bin\DB.dll.config
+C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\OperationOnDB\bin\EntityFramework.xml
+C:\Users\t-chaohe\Desktop\Workspace\aspdotnet\RestfulApiWebService\OperationOnDB\bin\EntityFramework.SqlServer.xml

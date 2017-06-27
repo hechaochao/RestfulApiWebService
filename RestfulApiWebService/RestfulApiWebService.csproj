@@ -217,28 +217,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QueryController.cs" />
     <Compile Include="DTOs\UidSim.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\data.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>data.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\data.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>data.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\data.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>data.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\t1.cs">
-      <DependentUpon>data.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Tool.cs" />
@@ -263,24 +245,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EntityDeploy Include="Models\data.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>data.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\data.edmx.diagram">
-      <DependentUpon>data.edmx</DependentUpon>
-    </Content>
+    <None Include="Properties\PublishProfiles\RestfulApiWebService20170627053236 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Models\data.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>data.edmx</DependentUpon>
-      <LastGenOutput>data.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\data.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>data.edmx</DependentUpon>
-      <LastGenOutput>data.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -314,6 +280,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -328,6 +295,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DB\DB.csproj">
+      <Project>{a2497eff-1e7d-49ab-81b7-78ce33404314}</Project>
+      <Name>DB</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="dataEntities-Web.config Connection String" description="dataEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.data.csdl|res://*/Models.data.ssdl|res://*/Models.data.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=MININT-U5OG3UP;initial catalog=test;user id=test;password=test;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\t-chaohe\\Desktop\\Workspace\\aspdotnet\\RestfulApiWebService\\RestfulApiWebService\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dataEntities']/@connectionString" />
+  </parameter>
+  <parameter name="testEntities1-Web.config Connection String" description="testEntities1 Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.data.csdl|res://*/Models.data.ssdl|res://*/Models.data.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=MININT-U5OG3UP;initial catalog=test;user id=test;password=test;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\t-chaohe\\Desktop\\Workspace\\aspdotnet\\RestfulApiWebService\\RestfulApiWebService\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='testEntities1']/@connectionString" />
+  </parameter>
+</parameters>
