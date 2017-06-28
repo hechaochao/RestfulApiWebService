@@ -36,16 +36,21 @@ namespace OperationOnDB.Controllers
                     var filePath = Server.MapPath(string.Format("~/{0}", "uploads"));
                     var fileName = files[i].FileName;
                     string fullPath = Path.Combine(filePath, fileName);
-                    files[i].SaveAs(fullPath);
-                    SaveData(fullPath);
+                    if (!System.IO.File.Exists(fullPath))
+                    {
+                        files[i].SaveAs(fullPath);
+                        SaveData(fullPath);
+                        continue;
+                    }
+                    return View(fileName + "had exists");
                 }
                 
                 ModelState.Clear();
                 ViewBag.Message = "Upload Successfully!";
-                return View();
+                return View("UploadFile");
             }
             ViewBag.Message = "Upload Failed!";
-            return View();
+            return View("UploadFile");
         }
 
        

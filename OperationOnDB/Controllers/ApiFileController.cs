@@ -40,7 +40,9 @@ namespace OperationOnDB.Controllers
                         hpf.SaveAs(fullPath);
                         SaveData(fullPath);
                         iUploadedCnt++;
+                        continue;
                     }
+                    return Path.GetFileName(hpf.FileName) + " does not exists";
                 }
             }
 

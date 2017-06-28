@@ -62,10 +62,10 @@ namespace RestfulApiService.Controllers
                 uts.Add(temp);
             }
 
-            if (uts == null)
-            {
-                return NotFound();
-            }
+            //if (uts == null)
+            //{
+            //    return NotFound();
+            //}
 
             List<XRefSpec> xfs = new List<XRefSpec>();
             foreach(uidt ut in uts)

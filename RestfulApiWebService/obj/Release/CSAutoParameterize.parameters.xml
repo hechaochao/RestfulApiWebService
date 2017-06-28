@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="dataEntities-Web.config Connection String" description="dataEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.data.csdl|res://*/Models.data.ssdl|res://*/Models.data.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=restfulapiservice.database.windows.net;initial catalog=test;user id=test;password=Qq123456;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\t-chaohe\\Desktop\\Workspace\\aspdotnet\\RestfulApiWebService\\RestfulApiWebService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dataEntities']/@connectionString" />
+  </parameter>
+</parameters>
